@@ -5,11 +5,16 @@ import { UserServiceService } from '../user-service.service';
 import { User } from '../user';
 import { UserClass } from '../user-class';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModuloGenericoModule } from '../modulo-generico/modulo-generico.module';
+
 
 
 @NgModule({
   declarations: [LoginComponent],
   imports: [
+    ModuloGenericoModule,
+    NgbModule,
     CommonModule,
     ReactiveFormsModule
   ],

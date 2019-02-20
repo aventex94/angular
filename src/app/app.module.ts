@@ -17,6 +17,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -28,12 +29,17 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
 
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
   }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotFoundComponent,
     
     
   ],

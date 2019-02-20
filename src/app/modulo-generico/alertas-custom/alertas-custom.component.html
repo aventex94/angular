@@ -1,0 +1,3 @@
+<p class="form-group">
+  <ngb-alert *ngIf="estado && !abierto" [type]="estructura.tipo" (close)="abierto = true" >{{estructura.mensaje}}</ngb-alert>
+</p> 

@@ -5,7 +5,9 @@ import { UserClass } from './user-class';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { Observable, of, BehaviorSubject } from 'rxjs';
+import { Observable, of, BehaviorSubject, throwError } from 'rxjs';
+import { EEXIST } from 'constants';
+
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -41,6 +43,15 @@ export class UserServiceService {
     localStorage.setItem("user", JSON.stringify(user));
   }
   getAutenticacion(user: User): Observable<any> {
-    return this.http.post(this.loginUrl, user, {observe:'response'});
+    return this.http.post(this.loginUrl, user, {observe:'response'}).pipe(
+      catchError((err:any) => {
+        return throwError(JSON.stringify(err.status));
+      }
+
+      )
+    )
+
+      
+    
   }
 }

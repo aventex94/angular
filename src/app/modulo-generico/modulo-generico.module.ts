@@ -10,10 +10,12 @@ import { RouterModule } from '@angular/router';
 import {UserClass} from '../user-class';
 import {UserServiceService} from '../user-service.service';
 import { AdminModule } from '../admin/admin.module';
+import { AlertasCustomComponent } from './alertas-custom/alertas-custom.component';
 
 @NgModule({
-  declarations: [TemplateComponent, NavbarComponent, FooterComponent, HomeComponent, NavbarAdminComponent],
+  declarations: [TemplateComponent, NavbarComponent, FooterComponent, HomeComponent, NavbarAdminComponent, AlertasCustomComponent],
   imports: [
+    
     AdminModule,
     RouterModule,
     CommonModule,
@@ -21,7 +23,7 @@ import { AdminModule } from '../admin/admin.module';
   ],
   providers:[UserServiceService],
   exports: [
-    HomeComponent,NavbarComponent,FooterComponent
+    HomeComponent,NavbarComponent,FooterComponent,AlertasCustomComponent
   ]
 })
 export class ModuloGenericoModule { }
