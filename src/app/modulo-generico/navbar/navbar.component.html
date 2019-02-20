@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    Cartelera Virtual
+  </a>
+
+  <button class="navbar-toggler" type="button"
+          (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse"
+       [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav mr-auto">
+      <li *ngIf="!loggedUser" class="nav-item">
+        <a routerLink="/login" class="nav-link">Login</a>
+      </li>
+      <li *ngIf="loggedUser?.cargo == 'administrador'" class="nav-item">
+        <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Administrador</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <app-alta-cartelera></app-alta-cartelera>
+                <a routerLink="/eliminarCartelera" class="dropdown-item">Eliminar Cartelera</a>
+                <a routerLink="/agregarUsuario" class="dropdown-item">Agregar Usuario</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="loggedUser?.cargo == 'profesor'">
+        <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Profesor</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <a routerLink="/altaCartelera" class="dropdown-item">*</a>
+                <a routerLink="/eliminarCartelera" class="dropdown-item">*</a>
+                <a routerLink="/agregarUsuario" class="dropdown-item">*</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="loggedUser?.cargo == 'alumno'">
+        <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Alumno</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <a routerLink="/altaCartelera" class="dropdown-item">*</a>
+                <a routerLink="/eliminarCartelera" class="dropdown-item">*</a>
+                <a routerLink="/agregarUsuario" class="dropdown-item">*</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="loggedUser">
+        <a class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </div>
+</nav>
