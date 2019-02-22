@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
   logout(){
     this.userService.userAux.next(null);
     localStorage.removeItem("user");
-    this.routes.navigateByUrl("");
+    this.routes.navigateByUrl("/login");
   }
 
   toggleNavbar() {

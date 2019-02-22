@@ -3,6 +3,7 @@ import { CarteleraServiceService } from 'src/app/cartelera-service.service';
 import { User } from 'src/app/user';
 import { Router } from '@angular/router';
 import { Cartelera } from 'src/app/cartelera';
+import { UserServiceService } from 'src/app/user-service.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomeComponent implements OnInit {
     if(currentUser){
       this.carteleraService.getCarteleras(currentUser.id,'1123456').subscribe(
         (res)=>{
-            console.log(res);
+            this.carteleras=res;
+            console.log(this.carteleras);
         },
         (err)=>{
           console.log(err);
