@@ -14,13 +14,5 @@ export class AppComponent {
   constructor(public CarteleraServiceService:CarteleraServiceService){
     
   }
-  getCarte(){
-    this.CarteleraServiceService.getCarteleras().subscribe(data => {console.log(data)});
-  }
-  getCarteleras(){
-    this.CarteleraServiceService.getCarteleras().subscribe(carteleras=>this.carteleras=carteleras);
-  }
-  mostrarCarteleras(){
-    console.log(this.carteleras);
-  }
+  
 }

@@ -4,9 +4,11 @@ import { AltaCarteleraComponent } from './alta-cartelera/alta-cartelera.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { CarteleraServiceService } from '../cartelera-service.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModuloGenericoModule } from '../modulo-generico/modulo-generico.module';
 @NgModule({
   declarations: [AltaCarteleraComponent],
   imports: [
+    ModuloGenericoModule,
     NgbModule,
     ReactiveFormsModule,
     CommonModule
