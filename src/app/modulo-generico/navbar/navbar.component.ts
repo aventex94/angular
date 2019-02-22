@@ -3,6 +3,7 @@ import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 import { UserServiceService } from 'src/app/user-service.service';
 import { User } from 'src/app/user';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -13,7 +14,7 @@ export class NavbarComponent implements OnInit {
   loggedUser: User;
   navbarOpen = false;
   
-  constructor(private userService:UserServiceService){ 
+  constructor(private userService:UserServiceService,private routes:Router){ 
     
   }
 
@@ -33,6 +34,7 @@ export class NavbarComponent implements OnInit {
   logout(){
     this.userService.userAux.next(null);
     localStorage.removeItem("user");
+    this.routes.navigateByUrl("");
   }
 
   toggleNavbar() {

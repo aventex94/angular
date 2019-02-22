@@ -7,7 +7,11 @@ import { CarteleraComponent } from './cartelera/cartelera.component';
 @NgModule({
   declarations: [ComentarioComponent, PublicacionComponent, CarteleraComponent],
   imports: [
+
     CommonModule
+  ],
+  exports:[
+    CarteleraComponent,
   ]
 })
 export class CarteleraModule { }

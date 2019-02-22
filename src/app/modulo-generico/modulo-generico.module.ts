@@ -10,12 +10,13 @@ import { RouterModule } from '@angular/router';
 import {UserClass} from '../user-class';
 import {UserServiceService} from '../user-service.service';
 import { AlertasCustomComponent } from './alertas-custom/alertas-custom.component';
+import { CarteleraModule } from '../cartelera/cartelera.module';
 
 @NgModule({
   declarations: [TemplateComponent, NavbarComponent, FooterComponent, HomeComponent, NavbarAdminComponent, AlertasCustomComponent],
   imports: [
     
-    
+    CarteleraModule,
     RouterModule,
     CommonModule,
     NgbModule,

@@ -16,13 +16,14 @@ export class CarteleraServiceService {
   
   carteleraUrl = "http://localhost:8080/ttps-spring/carteleras";
   constructor(private http: HttpClient) { }
-  /*getCarteleras(): Observable<CarteleraClass[]> {
-    return this.http.get<CarteleraClass[]>(this.carteleraUrl, httpOptions).pipe(
+  getCarteleras(id:string,token:string): Observable<CarteleraClass[]> {
+    const headers = new HttpHeaders().set("token",token).set("id",id);
+    return this.http.get<CarteleraClass[]>(this.carteleraUrl, { headers:headers} ).pipe(
       catchError((err: any) => { return of([]) }), //DENTRO DEL PIPE ESTAN LOS OPERADORES: CATCH, MAP, ETC.
 
 
     )
-  }*/
+  }
   postCartelera(id: string, cartelera: Cartelera, token: string): Observable<any> {
 
 
@@ -36,6 +37,7 @@ export class CarteleraServiceService {
       )
     )
   }
+ 
 
 
 }
