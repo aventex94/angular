@@ -1,4 +1,7 @@
 .contenido{
+    /*background-image: url("http://blogs.unlp.edu.ar/ingreso/files/2012/11/cropped-FrenteFac1.jpg");*/
+    background-size: cover;
+    background-color: #D4E6F1;
     flex: 1;
 }
 #divFlex{

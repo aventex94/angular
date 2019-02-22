@@ -4,3 +4,10 @@
     border-radius: 10px;
     padding: 16px;
 }
+#divFlex{
+    padding-top: 80px;
+    padding-bottom: 20px;
+    justify-content: center;
+    display:flex;
+    max-width:98%
+  }

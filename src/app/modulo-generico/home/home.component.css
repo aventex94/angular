@@ -1,0 +1,11 @@
+#divCarteleras{
+     
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#cartelera{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

@@ -1,17 +1,19 @@
-<form [formGroup]="altaCarteleraForm" id="widthForm">
-  <div class="form-group">
-    <label for="InputNameCartelera">Nombre Cartelera:</label>
-    <input formControlName="nombre" type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+<div id="divFlex">
+  <form [formGroup]="altaCarteleraForm" id="formAltaCartelera">
+    <div class="form-group">
+      <label for="InputNameCartelera">Nombre Cartelera:</label>
+      <input formControlName="nombre" type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
 
-  </div>
-  <div class="form-group">
-    <label for="InputNameCartelera">Año:</label>
-    <input formControlName="año" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="InputNameCartelera">Año:</label>
+      <input formControlName="año" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter email">
 
-  </div>
-  <button class="btn btn-primary" (click)="onSubmitAltaCarteleraForm()">Crear</button>
-  <br>
-  <br>
-  <app-alertas-custom></app-alertas-custom>
-</form>
+    </div>
+    <button class="btn btn-primary" (click)="onSubmitAltaCarteleraForm()">Crear</button>
+    <br>
+    <br>
+    <app-alertas-custom></app-alertas-custom>
+  </form>
+</div>
