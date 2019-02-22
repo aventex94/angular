@@ -39,9 +39,10 @@ export class LoginComponent implements OnInit {
     this.userService.getAutenticacion(this.loginForm.value)
       .subscribe(
         (res) => {
-
+          
+          
           console.log("res", res);
-          console.log("token", res.headers.get('token'));
+          console.log("token", res.token);
           localStorage.setItem("token", res.headers.get('token'));
           this.userService.setUser(res.body);
           this.router.navigateByUrl('');

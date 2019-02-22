@@ -32,7 +32,7 @@ export class CarteleraServiceService {
     return this.http.post(this.carteleraUrl, cartelera, { headers: headers }).pipe(
       catchError(
         (err: any) => {
-          return throwError(JSON.stringify(err.status));
+          return throwError(JSON.stringify(err.headers));
         }
       )
     )

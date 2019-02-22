@@ -3,8 +3,8 @@
   <form [formGroup]="loginForm" id="widthForm">
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input formControlName="username" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <label for="exampleInputEmail1">Username</label>
+      <input formControlName="username" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
       <small class="text-danger" *ngIf="loginForm.controls.username.touched && loginForm.controls.username.errors?.required">Campo requerido</small>
     </div>
 

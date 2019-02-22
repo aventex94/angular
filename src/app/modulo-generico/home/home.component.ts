@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     let currentUser:User;
     currentUser = JSON.parse(localStorage.getItem("user"));
     if(currentUser){
-      this.carteleraService.getCarteleras(currentUser.id,'1123456').subscribe(
+      this.carteleraService.getCarteleras(currentUser.id,'2123456').subscribe(
         (res)=>{
             this.carteleras=res;
             console.log(this.carteleras);

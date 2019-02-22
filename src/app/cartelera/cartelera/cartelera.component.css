@@ -1,8 +1,8 @@
 .cartelera{
     /*background-image: url("https://pbs.twimg.com/profile_images/839835102146351104/0vVJ5I9i_400x400.jpg");*/
     background-color:rgb(184, 238, 206);
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     border: 2px solid #cbd6e2;
     border-radius: 10px;
     padding: 16px;
@@ -16,4 +16,7 @@ div.cartelera:hover{
     /*background-image: none;*/
     background-color: whitesmoke;
     opacity: 1;
+}
+#datosCartelera{
+    list-style: none;
 }
