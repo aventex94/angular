@@ -3,13 +3,13 @@
     <div class="form-group">
       <label for="InputNameCartelera">Nombre Cartelera:</label>
       <input formControlName="nombre" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter name cartelera">
-
+      <small class="text-danger" *ngIf="altaCarteleraForm.controls.nombre.touched && altaCarteleraForm.controls.nombre.errors?.required">Campo requerido</small>
     </div>
     <div class="form-group">
       <label for="InputNameCartelera">Año:</label>
-      <input formControlName="año" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      <input formControlName="anio" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
         placeholder="Enter year">
-
+        <small class="text-danger" *ngIf="altaCarteleraForm.controls.anio.touched && altaCarteleraForm.controls.anio.errors?.required">Campo requerido</small>
     </div>
     <button class="btn btn-primary" (click)="onSubmitAltaCarteleraForm()">Crear</button>
     <br>

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cartelera } from 'src/app/cartelera';
 
 @Component({
   selector: 'app-cartelera',
@@ -10,8 +12,11 @@ export class CarteleraComponent implements OnInit {
   cartelera;
 
   
-  constructor() { }
-
+  constructor(private routes:Router) { }
+  abrirCartelera(cartelera:Cartelera){
+    console.log("Cartelera",cartelera);
+    //this.routes.navigateByUrl("/cartelera:" + cartelera); 
+  }
   ngOnInit() {
   }
 

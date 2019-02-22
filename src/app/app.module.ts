@@ -23,6 +23,7 @@ import { componentFactoryName } from '@angular/compiler';
 import { AdminModule } from './admin/admin.module';
 import { AltaCarteleraComponent } from './admin/alta-cartelera/alta-cartelera.component';
 import { AuthGuardRoleService } from './auth-guard-role.service';
+import { ViewCarteleraComponent } from './cartelera/view-cartelera/view-cartelera.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'not-found',
+  },
+  {
+    path:'cartelera/:cartelera',
+    component:ViewCarteleraComponent,
   }
 ]
 

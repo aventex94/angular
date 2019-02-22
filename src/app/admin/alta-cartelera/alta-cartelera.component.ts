@@ -24,7 +24,7 @@ export class AltaCarteleraComponent implements OnInit {
   ngOnInit() {
     this.altaCarteleraForm = this.fb.group({
       nombre: ['', [Validators.required]],
-      año: ['', Validators.required],
+      anio: ['', Validators.required],
     });
 
   }
@@ -38,7 +38,7 @@ export class AltaCarteleraComponent implements OnInit {
     let adminLogin: User;
     adminLogin = JSON.parse(localStorage.getItem("user"));
 
-    this.carteleraService.postCartelera(adminLogin.id, this.altaCarteleraForm.value, '1123456').subscribe(
+    this.carteleraService.postCartelera(adminLogin.id, this.altaCarteleraForm.value, localStorage.getItem("token")).subscribe(
       (res) => {
         this.alerta.dispararAlerta('success','Se agrego correctamente la cartelera');
       },

@@ -15,6 +15,7 @@ export class AuthGuardRoleService implements CanActivate {
       if(adminUser.cargo=='administrador'){
         return true;
       }else{
+        this.routes.navigateByUrl("");
         return false;
       }
     }else{

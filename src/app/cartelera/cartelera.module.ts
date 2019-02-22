@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { ComentarioComponent } from './comentario/comentario.component';
 import { PublicacionComponent } from './publicacion/publicacion.component';
 import { CarteleraComponent } from './cartelera/cartelera.component';
+import { ViewCarteleraComponent } from './view-cartelera/view-cartelera.component';
 
 @NgModule({
-  declarations: [ComentarioComponent, PublicacionComponent, CarteleraComponent],
+  declarations: [ComentarioComponent, PublicacionComponent, CarteleraComponent, ViewCarteleraComponent],
   imports: [
 
     CommonModule
   ],
   exports:[
-    CarteleraComponent,
+    CarteleraComponent,ViewCarteleraComponent,
   ]
 })
 export class CarteleraModule { }
