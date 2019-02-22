@@ -6,6 +6,7 @@ export class CarteleraClass implements Cartelera {
     id:String;
     creador:User;
     nombre:String;
+    año:String;
 
     public setId(id:String){
         this.id=id;

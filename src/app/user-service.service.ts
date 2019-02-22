@@ -6,7 +6,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, of, BehaviorSubject, throwError } from 'rxjs';
-import { EEXIST } from 'constants';
+
 
 
 const httpOptions = {
@@ -25,9 +25,7 @@ export class UserServiceService {
   
   loginUrl = "http://localhost:8080/ttps-spring/autenticacion"
 
-  createUser(): UserClass {
-    return new UserClass('1');
-  }
+  
   isLogin(): boolean {
     return this.userAux != null;
   }

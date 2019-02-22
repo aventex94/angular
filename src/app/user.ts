@@ -1,10 +1,10 @@
 export interface User {
-    id: String;
+    id: string;
     apellido: String;
     email: String;
     nombre: String;
     password: String;
     username: String;
-    perfil: String;
+    cargo: String;
     dni: String;
 }

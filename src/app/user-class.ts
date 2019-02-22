@@ -1,16 +1,16 @@
 import { User } from './user';
 
 export class UserClass implements User{
-    public id: String;
+    public id: string;
     public apellido: String;
     public email: String;
     public nombre: String;
     public password: String;
     public username: String;
-    public perfil: String;
+    public cargo: String;
     public dni: String;
 
-    public setId(id:String){
+    public setId(id:string){
         this.id=id;
     }
     public getId(){
@@ -40,7 +40,7 @@ export class UserClass implements User{
     public getPassword(){
         return this.password;
     }
-    constructor(idParam:String){
-        this.setId(idParam);
+    constructor(){
+        
     }
 }

@@ -18,6 +18,11 @@ import { catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './core/not-found/not-found.component';
+import { AuthGuardService } from './auth-guard.service';
+import { componentFactoryName } from '@angular/compiler';
+import { AdminModule } from './admin/admin.module';
+import { AltaCarteleraComponent } from './admin/alta-cartelera/alta-cartelera.component';
+import { AuthGuardRoleService } from './auth-guard-role.service';
 
 
 const routes: Routes = [
@@ -28,7 +33,17 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [AuthGuardService]
 
+  },
+  {
+    path: 'alta-cartelera',
+    component: AltaCarteleraComponent,
+    canActivate:[AuthGuardRoleService]
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent
   },
   {
     path: '**',
@@ -44,7 +59,7 @@ const routes: Routes = [
     
   ],
   imports: [
-    
+    AdminModule,
     HttpClientModule,
     LoginLogoutModule,
     ModuloGenericoModule,
